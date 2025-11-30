@@ -3,15 +3,6 @@ session_start();
 // Arquivo necessário para conexão com o banco de dados
 include "php/conn.php";
 
-/**
- * Função simplificada e mais segura para buscar lugares
- * A função busca APENAS locais com 'status_aprovacao' = 'aprovado' para o site principal.
- *
- * @param PDO $pdo Objeto de conexão PDO.
- * @param string|null $categoria Categoria a ser filtrada.
- * @param string $aprovacao Status de aprovação (padrão é 'aprovado').
- * @return array Dados encontrados.
- */
 function buscarLugares($pdo, $categoria = null, $aprovacao = 'aprovado') {
     // 1. Define a query base com filtro de segurança
     $sql = "SELECT * FROM lugares WHERE status_aprovacao = :aprovacao";
@@ -66,11 +57,11 @@ $userRole = $_SESSION['user']['role'] ?? 'GUEST'; // 'GUEST' se não estiver log
 
       <!-- Links de Navegação Principal -->
       <div class="nav-links" id="navLinks">
-        <a href="#destaques">Destaques</a>
+       
         <a href="#turismo">Turismo</a>
         <a href="#gastronomia">Gastronomia</a>
         <a href="#hospedagem">Hospedagem</a> 
-        <a href="#contato">Contato</a>
+        <a href="php/contato.php">Contato</a>
       </div>
 
       <!-- Ações de Login/Logout e Painéis -->
@@ -105,35 +96,14 @@ $userRole = $_SESSION['user']['role'] ?? 'GUEST'; // 'GUEST' se não estiver log
     <div class="container hero-inner">
       <h1 class="hero-title">Lins Travel</h1>
       <p class="hero-sub">Descubra as maravilhas de Lins, SP</p>
-      <a href="#destaques" class="btn btn-cta">Explore Agora</a>
+      <a href="php/explorar.php" class="btn btn-cta">Explore Agora</a>
     </div>
   </section>
 </header>
 
 <main>
   <!-- SEÇÃO DE DESTAQUES (Lugares Aprovados) -->
-  <section id="destaques" class="section">
-    <div class="container section-header">
-      <h2>Destaques</h2>
-      <p class="muted">Lugares imperdíveis selecionados pra você</p>
-    </div>
-
-    <div class="container grid">
-      <?php if (!empty($destaques)): ?>
-        <?php foreach ($destaques as $item): ?>
-          <article class="card reveal">
-            <div class="card-media" style="background-image:url('<?= htmlspecialchars($item['imagem'] ?: 'https://placehold.co/300x200/cccccc/333333?text=Sem+Imagem') ?>')"></div>
-            <div class="card-body">
-              <h3><?= htmlspecialchars($item['nome']) ?></h3>
-              <p><?= htmlspecialchars(substr($item['descricao'], 0, 100)) ?>...</p>
-            </div>
-          </article>
-        <?php endforeach; ?>
-      <?php else: ?>
-        <p class="container">Nenhum destaque aprovado encontrado.</p>
-      <?php endif; ?>
-    </div>
-  </section>
+  
 
   <!-- SEÇÃO DE TURISMO (Lugares Aprovados) -->
   <section id="turismo" class="section alt-bg">
@@ -211,7 +181,7 @@ $userRole = $_SESSION['user']['role'] ?? 'GUEST'; // 'GUEST' se não estiver log
     <div class="container contact-inner reveal" style="text-align: center; background: #e0f7fa; padding: 40px; border-radius: 10px;">
       <h2>Planeje sua Viagem</h2>
       <p>Entre em contato conosco para mais informações. Estamos prontos para ajudar.</p>
-      <a class="btn btn-cta" href="#">Fale Conosco</a>
+      <a class="btn btn-cta" href="php/contato.php">Fale Conosco</a>
     </div>
   </section>
 </main>

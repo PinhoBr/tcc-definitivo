@@ -85,6 +85,20 @@ if (isset($_GET['status'])) {
             <small>Descreva brevemente seu local (máximo 255 caracteres).</small>
         </div>
 
+        <!-- NOVO CAMPO: CEP para Localização -->
+        <div class="form-group">
+            <label for="cep">CEP (apenas números):</label>
+            <input type="text" id="cep" name="cep" placeholder="Ex: 16400000" maxlength="8" pattern="\d{8}">
+            <small>O CEP é essencial para a função de traçar rotas no Google Maps.</small>
+        </div>
+
+        <!-- NOVO CAMPO: Telefone para Contato/Ligar -->
+        <div class="form-group">
+            <label for="telefone">Telefone / WhatsApp:</label>
+            <input type="text" id="telefone" name="telefone" placeholder="Ex: 14999999999" maxlength="11" pattern="\d{10,11}">
+            <small>Inclua o DDD e apenas números. Usado para botões de contato.</small>
+        </div>
+
         <div class="form-group">
             <label for="imagem">URL da Imagem:</label>
             <input type="text" id="imagem" name="imagem" placeholder="https://exemplo.com/sua-imagem.jpg">

@@ -1,0 +1,136 @@
+/* Este arquivo contém apenas estilos que SÃO DIFERENTES da página inicial (index.php).
+   O header (barra de navegação) usa o 'css/style.css' para ser idêntico. */
+
+/* Estilo para a classe ativa no nav-links (Copada do style.css e ajustada) */
+.nav-links a {
+    /* Ajuste para que o destaque de borda não quebre o layout */
+    padding-bottom: 5px; 
+    border-bottom: 3px solid transparent; 
+    transition: border-color 0.2s, color 0.2s;
+    text-decoration: none; /* Garante que os links não sejam sublinhados por padrão */
+}
+
+.nav-links a:hover {
+    color: #0084db;
+    border-bottom-color: #0084db;
+}
+
+.nav-links a.nav-active {
+    color: #0084db;
+    border-bottom-color: #0084db; 
+}
+
+
+/* Layout do Cabeçalho da Página (Substituindo o Hero do index.php) */
+.page-header {
+    text-align: center;
+    padding: 50px 0 30px;
+    background-color: #f4f6f8;
+}
+.page-header h1 {
+    font-size: 2.5rem;
+    color: #0f1724;
+    margin-bottom: 5px;
+}
+.page-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Layout do Grid de Cards (Adaptado do estilo do index.php) */
+.explorar-section {
+    padding-bottom: 60px;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Card - Agora é um link <a>. Precisa de display: flex e text-decoration: none */
+.card {
+    background: white;
+    width: 320px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none; /* Remove sublinhado do link */
+    color: inherit; /* Mantém a cor do texto padrão */
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.card-media {
+    height: 200px; /* Maior que na index */
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1; 
+}
+
+.card-body h3 {
+    color: #0f1724; /* Garante a cor escura para o título */
+}
+
+.card-body p {
+    color: #666; /* Garante a cor cinza para o texto */
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    margin-bottom: 5px;
+    align-self: flex-start; /* Garante que fique alinhado à esquerda */
+}
+
+/* Novo estilo para o link de detalhes dentro do card */
+.card-action-btn {
+    margin-top: 15px;
+    color: #0084db;
+    font-weight: 600;
+    align-self: flex-start;
+    transition: color 0.2s;
+}
+
+.card:hover .card-action-btn {
+    color: #1fb5b2; /* Mudar a cor ao passar o mouse */
+}
+
+
+.no-results {
+    text-align: center;
+    padding: 50px;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    margin-top: 40px;
+    color: #777;
+    background-color: #fff;
+}
+
+/* Responsivo para dispositivos móveis */
+@media (max-width: 700px) {
+    .card {
+        width: 100%;
+    }
+}

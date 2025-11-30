@@ -1,0 +1,220 @@
+/* Este arquivo contém estilos específicos para a página detalhe.php */
+
+/* 1. Reset / Base */
+.detail-container {
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+/* 2. Breadcrumb */
+.breadcrumb {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+.breadcrumb a {
+    color: #0084db;
+    text-decoration: none;
+    font-weight: 500;
+}
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* 3. Layout Principal (Duas Colunas) */
+.content-wrapper {
+    display: flex;
+    gap: 40px;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.info-column {
+    flex: 0 0 450px; /* Largura fixa para imagem em desktop */
+    display: flex;
+    flex-direction: column;
+}
+
+.text-column {
+    flex: 1; /* Ocupa o restante do espaço */
+}
+
+/* 4. Imagem Principal e Tag */
+.main-image {
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.category-tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 6px 15px;
+    background: #0084db; /* Cor primária */
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+/* 5. Conteúdo e Descrição */
+.text-column h1 {
+    font-size: 2.5rem;
+    color: #0f1724;
+    margin-bottom: 20px;
+}
+
+.description-box {
+    padding: 20px;
+    background-color: #f8fafc;
+    border-left: 5px solid #1fb5b2; /* Linha de destaque */
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.lead-description {
+    color: #444;
+    line-height: 1.7;
+}
+
+/* 6. Ações (Telefone e WhatsApp) */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.btn-whatsapp, .btn-call {
+    flex: 1;
+    text-align: center;
+    padding: 12px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.btn-whatsapp {
+    background-color: #25d366; 
+    color: white;
+}
+
+.btn-whatsapp:hover {
+    background-color: #128c7e;
+}
+
+.btn-call {
+    background-color: #e0f7fa; 
+    color: #0084db;
+    border: 1px solid #0084db;
+}
+
+.btn-call:hover {
+    background-color: #c9e9fc;
+}
+
+.btn-whatsapp i, .btn-call i {
+    margin-right: 8px;
+}
+
+/* 7. Localização e Mapa */
+.location-map h2 {
+    font-size: 1.5rem;
+    color: #0f1724;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.location-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.location-info i {
+    color: #1fb5b2;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.btn-maps {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(45deg, #fbbc05, #e06000); /* Cores Google */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 10px rgba(251, 188, 5, 0.3);
+    /* CORREÇÃO: Adiciona margem inferior para separar do botão de baixo */
+    margin-bottom: 20px; 
+    /* Adiciona display: block no mobile para que o botão ocupe toda a largura
+       e o margin-bottom funcione corretamente. */
+}
+
+.btn-maps:hover {
+    transform: translateY(-2px);
+}
+
+.muted-error {
+    color: #aaa;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+
+/* 8. Responsividade para Móvel (Mobile First) */
+@media (max-width: 992px) {
+    .content-wrapper {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .info-column {
+        flex: auto; /* Remove largura fixa */
+    }
+
+    .text-column h1 {
+        font-size: 2rem;
+        margin-top: 15px; /* Espaço entre imagem e título no móvel */
+    }
+}
+
+@media (max-width: 480px) {
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* CORREÇÃO MOBILE: Garante que os botões de ação ocupem 100% da largura
+       para que a margem funcione corretamente. */
+    .btn-maps, .btn-back { 
+        display: block;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box; /* Garante que padding e border sejam incluídos no width */
+    }
+    
+    /* Adiciona uma classe para o botão "Voltar para Explorar" (se ele for um link simples)
+       assumindo que ele tem uma classe como .btn-back ou .btn-outline */
+    .btn-outline-secondary { /* Usando uma classe comum para botões secundários, ajuste se necessário */
+        display: block;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
