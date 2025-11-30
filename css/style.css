@@ -1,0 +1,229 @@
+/* 1. Configuração Inicial (Reset) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif; /* Fonte um pouco mais moderna */
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* 2. Container Central */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* 3. Barra de Navegação (Navbar) */
+.navbar {
+    background-color: #ffffff;
+    /* Troquei a borda cinza dura por uma sombra suave */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Detalhe da cor no logo (Turquesa) */
+.brand-accent {
+    color: #0084db;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #0084db;
+}
+
+/* Botões */
+.btn {
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+/* Botão Sólido (Principal) */
+.btn-primary {
+    background: linear-gradient(90deg, #0084db, #1fb5b2);
+    color: white;
+}
+
+/* Botão com Borda (Geralmente usado no Login) */
+/* Adicionei isso para garantir que não fique roxo */
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid #1fb5b2;
+    color: #0084db;
+}
+
+.btn-outline:hover {
+    background: linear-gradient(90deg, #0084db, #1fb5b2);;
+    color: white;
+}
+
+/* 4. Banner Principal (Hero) com Imagem */
+.hero {
+    /* Imagem de fundo atualizada conforme pedido */
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../imagens/lins travel2.png');
+    background-size: cover;
+    background-position: center;
+    
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    
+    /* Arredondado embaixo */
+    border-radius: 0 0 30px 30px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    opacity: 0.95;
+}
+
+.btn-cta {
+    /* Aquele degradê turquesa mais claro que estava antes */
+    background: linear-gradient(90deg, #0084db, #1fb5b2);
+    color: white;
+    padding: 14px 35px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(165, 14, 14, 0.3);
+    transition: transform 0.2s;
+}
+
+.btn-cta:hover {
+    transform: translateY(-3px);
+}
+
+/* 5. Seções Gerais */
+.section {
+    padding: 60px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    color: #0f1724;
+    font-size: 1.8rem;
+}
+
+/* 6. Cards com Imagens */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    width: 320px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card-media {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-body h3 {
+    margin: 0;
+    color: #0f1724;
+}
+
+.card-body p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* 7. Rodapé */
+.site-footer {
+    background: linear-gradient(90deg, #0084db, #1fb5b2);
+    color: #dbeef0;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.site-footer a {
+    color: #9fdce0;
+    text-decoration: none;
+}
+
+/* 8. Responsivo */
+@media (max-width: 700px) {
+    .nav-inner {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .card {
+        width: 100%;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
