@@ -84,7 +84,7 @@ $userRole = $_SESSION['user']['role'] ?? 'GUEST'; // 'GUEST' se não estiver log
       <!-- Links de Navegação Principal -->
       <div class="nav-links" id="navLinks">
         
-        <a href="#destaques">Destaques</a>
+       
         <a href="#turismo">Turismo</a>
         <a href="#gastronomia">Gastronomia</a>
         <a href="#hospedagem">Hospedagem</a> 
@@ -130,36 +130,8 @@ $userRole = $_SESSION['user']['role'] ?? 'GUEST'; // 'GUEST' se não estiver log
 
 <main>
   <!-- SEÇÃO DE DESTAQUES (Lugares Aprovados) -->
-  <section id="destaques" class="section">
-    <div class="container section-header">
-      <h2>Destaques</h2>
-      <p class="muted">Locais mais relevantes ou promovidos</p>
-    </div>
-
-    <div class="container grid">
-      <?php if (!empty($destaques)): ?>
-        <?php foreach ($destaques as $item): ?>
-          <article class="card reveal">
-            <!-- Link para a página de detalhe -->
-            <a href="php/detalhe.php?id=<?= $item['id'] ?>" style="text-decoration:none; color:inherit;">
-              <div class="card-media" style="background-image:url('<?= htmlspecialchars($item['imagem'] ?: 'https://placehold.co/300x200/cccccc/333333?text=Sem+Imagem') ?>')"></div>
-            </a>
-            <div class="card-body">
-              <h3><?= htmlspecialchars($item['nome']) ?></h3>
-              <p><?= htmlspecialchars(substr($item['descricao'], 0, 100)) ?>...</p>
-            </div>
-          </article>
-        <?php endforeach; ?>
-      <?php else: ?>
-        <p class="container">Nenhum destaque aprovado encontrado.</p>
-      <?php endif; ?>
-    </div>
-    <!-- Botão "Ver Mais" -->
-    <div class="container text-center" style="margin-top: 20px; text-align: center;">
-        <a href="php/explorar.php#destaque" class="btn btn-outline">Ver Mais Destaques</a>
-    </div>
-  </section>
-
+  
+   
 
   <!-- SEÇÃO DE TURISMO (Lugares Aprovados) -->
   <section id="turismo" class="section alt-bg">
@@ -271,17 +243,17 @@ $userRole = $_SESSION['user']['role'] ?? 'GUEST'; // 'GUEST' se não estiver log
     </div>
     <div>
       <h4>Contato</h4>
-      <p>contato@linstravel.com<br/> (xx) xxxx-xxxx</p>
-      <a class="btn btn-primary" href="php/add_lugar.php">Cadastrar Meu Local</a>
+      <p>linstravel@outlook.com<br/> (14) 99141-2089</p>
+      
     </div>
     <div>
       <h4>Siga-nos</h4>
       <p class="socials">
-        <a href="#" aria-label="Instagram">Instagram</a> • <a href="#" aria-label="WhatsApp">WhatsApp</a>
+        <a href="https://www.instagram.com/pinhow03/" aria-label="Instagram">Instagram</a> • <a href="https://wa.me/5514991412089" aria-label="WhatsApp">WhatsApp</a>
       </p>
     </div>
   </div>
-
+        
   <div class="container footer-bottom">
     <small>&copy; <?= date('Y') ?> Lins Travel. Todos os direitos reservados.</small>
   </div>
